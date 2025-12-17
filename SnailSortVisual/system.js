@@ -6,7 +6,6 @@ const selectDiv = document.querySelector('.select');
 let itemDiv;
 let matrix = []; 
 let isTime = 5;
-let isRunning = false;
 
 const generateMatrix = (size) => {
   const newMatrix = [];
@@ -70,7 +69,6 @@ button.addEventListener('click', () => {
 
 function countdown() {
   const snailOrder = snail(matrix);
-  isRunning = true;
 
   if (isTime > 0) {
     countdownDiv.textContent = `⏳ ${isTime}`;
@@ -85,7 +83,6 @@ function countdown() {
     });
 
     setTimeout(() => {
-      isRunning = false;
       button.disabled = false;
       button.textContent = 'Reiniciar Contagem';
       countdownDiv.textContent = '✅ Concluído!';
